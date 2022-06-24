@@ -1,11 +1,14 @@
 // Modules
-import { View, SafeAreaView, Text, Image } from "react-native";
+import { View, Text } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
 import {SvgXml} from 'react-native-svg';
 
 // Styles
-import { intoSliderStyles } from '../../shared/styles';
+import { intoSliderStyles } from '../../shared/styles/introduction';
 
+
+// Colors
+import {mainColor, textMainColor, subTextColor} from '../../shared/utils/colors'
 
 // Illustrations
 import {slideFirstIcon, slideSecondIcon, slideThirdIcon } from '../../shared/assets/svgs'
@@ -31,14 +34,15 @@ const SLIDES = [
     }
 ];
 
+// 
 export default () => {
 
     const renderItem = ({item}) => {
         return (
-            <View style={{alignItems: 'center', flex: 1, justifyContent: 'center', marginHorizontal: 20}}>
+            <View style={intoSliderStyles.slideItemContainer}>
                 <SvgXml xml={item.source} />
-                <Text style={{textAlign: 'center', fontSize: 30, fontWeight: '600', color: "#41535E", marginTop: 55, marginBottom: 20}}> {item.title} </Text>
-                <Text style={{textAlign: 'center', paddingHorizontal: 30, color: '#41535E'}}> {item.text} </Text>
+                <Text style={intoSliderStyles.itemTitle}> {item.title} </Text>
+                <Text style={intoSliderStyles.itemText}> {item.text} </Text>
             </View>
         )
     }
@@ -49,7 +53,7 @@ export default () => {
                 renderItem={renderItem}
                 data={SLIDES}
                 dotStyle={{backgroundColor: "lightgray"}}
-                activeDotStyle={{backgroundColor: '#F06B6B'}}
+                activeDotStyle={{backgroundColor: mainColor}}
             />
         </View>
     )
