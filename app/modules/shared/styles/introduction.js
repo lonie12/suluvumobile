@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { subTextColor, textMainColor, titleColor } from "../utils/colors";
 
 export const intoSliderStyles = StyleSheet.create({
     slideContainer: {
@@ -17,7 +18,7 @@ export const intoSliderStyles = StyleSheet.create({
         textAlign: 'center', 
         fontSize: 30, 
         fontWeight: '600', 
-        color: "#41535E", 
+        color: titleColor, 
         marginTop: 55, 
         marginBottom: 20
     },
@@ -25,7 +26,7 @@ export const intoSliderStyles = StyleSheet.create({
     itemText: {
         textAlign: 'center', 
         paddingHorizontal: 30, 
-        color: '#41535E',
+        color: subTextColor,
         fontSize: 14
     } 
 });
