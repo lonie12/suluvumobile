@@ -5,11 +5,4 @@ export const styles = StyleSheet.create({
         backgroundColor: 'whitesmoke',
         flex: 1,
     }
-})
-
-export const intoSliderStyles = StyleSheet.create({
-    slideContainer: {
-        flex: 1,
-        justifyContent: 'center',
-    }
-})
+});
