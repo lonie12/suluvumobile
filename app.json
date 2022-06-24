@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "mobileiinstore",
+    "slug": "mobileiinstore",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "mobileiinstore"
+}
