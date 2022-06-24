@@ -4,7 +4,7 @@ import { buttonTextColor, mainColor } from '../utils/colors';
 export default (props) => {
 
     return (
-        <TouchableOpacity style={{...styles.touchable, ...props.style}} onPress={props.validate}>
+        <TouchableOpacity style={{...styles.touchable, ...props.style}} onPress={props.onPress}>
             <Text style={{...styles.text, ...props.textStyle}}> {props.title} </Text>
         </TouchableOpacity>
     )
