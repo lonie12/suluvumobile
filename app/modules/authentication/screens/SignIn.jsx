@@ -1,47 +1,52 @@
-import { View, Text } from 'react-native';
-import TextEditable from '../../shared/components/TextEditable';
+import { View, Text, SafeAreaView, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import BtnValidation from '../../shared/components/BtnValidation';
-import BtnWithLeftIcon from '../../shared/components/BtnWithLeftIcon';
-import { googleAuthIcon } from '../../shared/assets/svgs';
-import { mainColor } from '../../shared/utils/colors';
+import TextEditable from '../../shared/components/TextEditable';
+import TextEditableIcon from '../../shared/components/TextEditableIcon';
+import { styles } from '../../shared/styles';
+import { authStyles } from '../../shared/styles/authentication';
+import { mainColor, titleColor } from '../../shared/utils/colors';
 
-export default () => {
+export default ({navigation}) => {
 
     return (
-        <View style={{marginTop: 40, padding: 10}}>
-            <TextEditable 
-                title= "Adresse mail"
-                placeholder= "Ex: example@gmail.com"
-            />
-            <TextEditable 
-                title= "Mot de passe"
-                placeholder= "***** **** ****"
-                secureTextEntry
-            />
+        <View style={styles.container}>
+            <>
+                <Text style={[authStyles.indexTitle, {fontSize: 35, marginBottom: 20}]}>Connexion</Text>
 
-            <View style={{marginBottom: 69}}>
-                <Text style={{alignSelf: 'flex-end', color: mainColor}}>Mot de passe oublié ?</Text>
-            </View>
+                <Text style={[authStyles.indexText]}>Connectez vous en saisissant votre identifant et votre mot de passe.</Text>
 
-            <BtnValidation 
-                style={{
-                    width: "80%", 
-                    alignSelf: 'center',
-                    paddingVertical: 15,
-                    marginBottom: 12
-                }}
-                title="Se connecter"
-            />
-            <BtnWithLeftIcon 
-                style={{
-                    width: "80%", 
-                    alignSelf: 'center',
-                    paddingVertical: 15,
-                    backgroundColor: "lightgray",
-                }}
-                title="Continuer avec google"
-                xml={googleAuthIcon}
-            />
+                <View style={{marginBottom: 15}}>
+                    <TextEditableIcon style={{width: '85%', marginBottom: 0}} inputStyle={{fontSize: 16}} placeholder="Entrer un nom d'utilisateur">
+                        <Text style={{fontSize: 18, fontWeight: 'bold', color: '#F06B6B'}}>ID</Text>
+                    </TextEditableIcon>
+                    <TextEditableIcon style={{width: '85%', marginBottom: 0}} inputStyle={{fontSize: 16}} placeholder="Entrer un mot de passe">
+                        <Text style={{fontSize: 18, fontWeight: 'bold', color: '#F06B6B'}}>MP</Text>
+                    </TextEditableIcon>
+                </View>
+
+                <View style={{marginBottom: 15, alignSelf: 'flex-end', marginRight: '8%'}}>
+                    <Text onPress={() => {navigation.navigate('signup')}} style={{fontSize: 16, color: mainColor}}>Mot de passe oublié ?</Text>
+                </View>
+
+                <BtnValidation
+                    title= 'Suivant'
+                    style={{width: '65%'}}
+                    onPress={() => {navigation.navigate('appcontainere')}}
+                />
+
+                <View style={{marginTop: 15, alignSelf: 'flex-end', marginRight: '8%'}}>
+                    <Text onPress={() => {navigation.navigate('signup')}} style={{fontSize: 16, color: titleColor}}>Ou Inscrivez-vous</Text>
+                </View>
+
+                <View style={{position: 'absolute', bottom: 20}}>
+                    <Text style={authStyles.policy}>
+                        En vous connectant ou en vous inscrivant, vous acceptez 
+                        <Text style={{color: mainColor}}> les conditions générales</Text> et 
+                        <Text style={{color: mainColor}}> la politique de cofidentialité</Text>.  
+                    </Text>
+                </View>
+            </>
+
         </View>
     )
 }

@@ -34,12 +34,16 @@ export const authStyles = StyleSheet.create({
         fontWeight: "700", 
         color: titleColor, 
         letterSpacing: 1, 
-        marginVertical: 20 
+        marginVertical: 18 
+    },
+
+    verifyIndexTitle: {
+        color: "#F06B6B"
     },
 
     indexText: {
         textAlign: 'center', 
-        paddingHorizontal: 40, 
+        paddingHorizontal: 25, 
         fontSize: 15, 
         lineHeight: 22, 
         color: subTextColor, 
@@ -49,25 +53,48 @@ export const authStyles = StyleSheet.create({
     buttonContainer: {
         width: "100%", 
         alignItems: 'center', 
-        marginTop: 30, marginBottom: 20
+        marginTop: 28, 
+        marginBottom: 20
     },
 
     signUpButton: { 
         width: "75%", 
-        paddingVertical: 14, 
+        paddingVertical: 12, 
         marginVertical: 15
     },
 
     signInButton: { 
         width: "75%", 
-        paddingVertical: 14, 
+        paddingVertical: 12, 
         marginBottom: 15, 
         backgroundColor: subMainColor
+    },
+
+    indexVerification: {
+        marginBottom: 25
+    },
+
+    resendText: {
+        fontSize: 16,
+        color: subTextColor, 
+    },
+
+    resend: {
+        color: '#F06B6B',
+    },
+
+    verifyInput: {
+        borderWidth: 1,
+        marginBottom: 25,
+        padding: 20,
+        width: '75%',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
 
     policy: {
         textAlign: 'center', 
         paddingHorizontal: 23, 
-        fontSize: 12
+        fontSize: 13
     }
 })

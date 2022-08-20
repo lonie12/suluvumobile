@@ -1,11 +1,14 @@
 {
   "expo": {
-    "name": "mobileiinstore",
-    "slug": "mobileiinstore",
+    "name": "suluvu",
+    "slug": "suluvu",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "ios": {
+      "bundleIdentifier": "com.suluvu"
+    }
   },
-  "name": "mobileiinstore"
+  "name": "suluvu"
 }

@@ -6,12 +6,12 @@ import {SvgXml} from 'react-native-svg';
 // Styles
 import { intoSliderStyles } from '../../shared/styles/introduction';
 
-
 // Colors
 import {mainColor, textMainColor, subTextColor} from '../../shared/utils/colors'
 
 // Illustrations
 import {slideFirstIcon, slideSecondIcon, slideThirdIcon } from '../../shared/assets/svgs'
+import { useEffect } from "react";
 
 const SLIDES = [
     {
@@ -23,7 +23,7 @@ const SLIDES = [
     {
         id: 1001,
         title: "Faites votre course",
-        text: "Ne quittez pas la maison, vous pouvez faire votre course en un seul clic.",
+        text: "Ne quittez pas la maison, vous pouvez faire votre course en un seul click.",
         source: slideSecondIcon
     },
     {
@@ -35,7 +35,11 @@ const SLIDES = [
 ];
 
 // 
-export default () => {
+export default ({navigation}) => {
+
+    useEffect(() => {
+      navigation.navigate('appcontainer')
+    }, [])
 
     const renderItem = ({item}) => {
         return (
@@ -54,6 +58,7 @@ export default () => {
                 data={SLIDES}
                 dotStyle={{backgroundColor: "lightgray"}}
                 activeDotStyle={{backgroundColor: mainColor}}
+                onDone={() => {navigation.navigate('authentication')}}
             />
         </View>
     )

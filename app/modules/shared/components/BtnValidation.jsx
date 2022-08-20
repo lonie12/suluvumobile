@@ -13,13 +13,14 @@ export default (props) => {
 const styles = StyleSheet.create({
     touchable: {
         backgroundColor: mainColor,
-        paddingVertical: 10,
-        borderRadius: 10
+        borderRadius: 6,
+        paddingVertical: 12,
+        width: '70%',
     },
 
     text: {
         color: buttonTextColor,
-        fontSize: 18,
+        fontSize: 15,
         textAlign: 'center',
         fontWeight: '500'
     }
